@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:insert="fragments/head :: head"></div>
+<div th:insert="fragments/navbar :: navbar"></div>
+
+<body>
+  <div class="container">
+    <div class="cards">
+      <div class="card text-center my-2" th:each="farmacia: ${farmacias}">
+        <div class="card-body" th:id="${farmacia.uuid}">
+          Nombre: <h5 class="card-title" th:text="${farmacia.nombre}"></h5>
+          ID: <h6 class="card-subtitle mb-2 text-muted" th:text="${farmacia.uuid}"></h6>
+          Ubicacion: <h6 class="text-muted" th:text="${farmacia.ubicacion}"></h6>
+          Ventas: <h6 class="text-muted" th:text="${farmacia.ventas}"></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
